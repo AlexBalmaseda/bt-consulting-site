@@ -59,10 +59,12 @@
     .lead { font-size: clamp(17px, 2vw, 20px); max-width: 60ch; }
 
     .topbar { position: sticky; top: 0; z-index: 50; -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); background: color-mix(in srgb, var(--ivory) 85%, transparent); border-bottom: 1px solid var(--line); }
-    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 88px; }
     .word { display: flex; align-items: baseline; gap: 10px; font-family: var(--serif); font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
     .word .mono { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: var(--navy); color: var(--gold-soft); font-size: 14px; font-weight: 700; align-self: center; }
     .word .full { color: var(--ink); } .word .full b { font-weight: 700; }
+    .word .logo-img { height: 60px; width: auto; display: block; }
+    footer .word .logo-img { height: 48px; }
     .nav { display: flex; gap: 28px; align-items: center; font-size: 14.5px; font-weight: 600; }
     .nav a { color: var(--ink-soft); text-decoration: none; } .nav a:hover { color: var(--navy); }
     .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: #fff; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; text-decoration: none; border: 0; transition: background 0.15s ease, transform 0.15s ease; }
@@ -84,6 +86,12 @@
     .svc .n { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--gold); }
     .svc h3 { font-size: 18px; margin: 10px 0 8px; }
     .svc p { font-size: 14.5px; margin: 0; }
+
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 44px; }
+    .ap { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 34px 34px 34px 40px; position: relative; }
+    .ap::before { content: ""; position: absolute; left: 0; top: 34px; bottom: 34px; width: 3px; background: var(--gold); border-radius: 2px; }
+    .ap h3 { font-size: 22px; margin-bottom: 14px; }
+    .ap p { font-size: 15.5px; margin: 0; line-height: 1.68; }
 
     .team { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
     .member { display: grid; grid-template-columns: auto 1fr; gap: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 28px; align-items: start; }
@@ -121,14 +129,15 @@
 <body>
   <div class="topbar">
     <div class="wrap">
-      <div class="word"><span class="mono">BTC</span><span class="full"><b>Business Transformation</b> Consulting</span></div>
+      <div class="word"><img src="assets/btc-consulting-logo.png" alt="BTC — Business Transformation Consulting LLC" class="logo-img" /></div>
       <nav class="nav">
         <span class="links" style="display:contents">
+          <a href="#about-intro">About</a>
           <a href="#services">Services</a>
           <a href="#team">Team</a>
           <a href="#locations">Locations</a>
         </span>
-        <a class="btn" href="mailto:alex@bt-consultingllc.com?subject=Business%20Transformation%20Consulting%20%E2%80%94%20inquiry">Contact us</a>
+        <a class="btn" href="mailto:info@bt-consultingllc.com?subject=Business%20Transformation%20Consulting%20%E2%80%94%20inquiry">Contact us</a>
       </nav>
     </div>
   </div>
@@ -146,11 +155,37 @@
     </div>
   </header>
 
+  <section id="about-intro" style="background:var(--ivory-2)">
+    <div class="wrap">
+      <p class="eyebrow">Who we are</p>
+      <h2>Business transformation experts, on your side of the table.</h2>
+      <p class="lead" style="margin-top:18px">At our core, we are business transformation experts committed to delivering comprehensive solutions that empower organizations to strategize, expand, restructure, and infuse technology into their operations. Our mission is to harness our extensive business acumen, technical expertise, and implementation prowess to turn your challenges into tangible business advantages — and we firmly believe in the value of external perspective and second opinions to navigate and conquer your most complex obstacles.</p>
+    </div>
+  </section>
+
+  <section id="approach" style="padding-top:20px">
+    <div class="wrap">
+      <p class="eyebrow">How we work</p>
+      <h2>Our approach.</h2>
+      <p class="lead" style="margin-top:18px">A business-transformation perspective across business and technology — applied through two core disciplines, each tailored to your objectives, processes, and goals.</p>
+      <div class="approach-grid">
+        <div class="ap">
+          <h3>Business Strategy</h3>
+          <p>Our focus centers on aiding senior executives in crafting operational strategies that address their organization's unique needs. We leverage the current operational landscape and harness the latest technologies and methodologies available in the market to tailor solutions that best align with your business objectives. Collaboratively with our clients, we chart the most effective and sustainable course to achieve their business goals.</p>
+        </div>
+        <div class="ap">
+          <h3>Business Transformation</h3>
+          <p>Our collaboration extends across all organizational levels, enabling us to delve deep into the intricacies of business and technology challenges. This insight allows us to meticulously craft and recommend end-to-end solutions that drive business value across both front- and back-office operations. We deploy a blend of robust consulting skills, business expertise, and industry best practices — aligned with your objectives, processes, governance, performance metrics, and tools — to analyze your challenges, develop informed hypotheses, and rigorously test conclusions, implementing the most suitable and effective business solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="services" style="padding-top:20px">
     <div class="wrap">
-      <p class="eyebrow">What we do</p>
-      <h2>Solutions tailored to empower strategic decisions.</h2>
-      <p class="lead" style="margin-top:18px">From strategy through execution — spanning planning, expansion, structural refinement, and technology integration.</p>
+      <p class="eyebrow">What we deliver</p>
+      <h2>Our services.</h2>
+      <p class="lead" style="margin-top:18px">Solutions tailored to empower senior management — from strategy through execution, spanning planning, expansion, structural refinement, and technology integration.</p>
       <div class="services">
         <div class="svc"><div class="n">01</div><h3>Business Strategy</h3><p>Crafting well-defined and actionable strategies to drive your business toward success.</p></div>
         <div class="svc"><div class="n">02</div><h3>Value Proposition &amp; Business Case</h3><p>Developing compelling business cases and value propositions to support strategic decisions.</p></div>
@@ -168,13 +203,14 @@
 
   <section id="team" style="background:var(--ivory-2)">
     <div class="wrap">
-      <p class="eyebrow">Our partners</p>
-      <h2>Seasoned leaders across banking, technology, and operations.</h2>
+      <p class="eyebrow">Our people</p>
+      <h2>Our leadership team.</h2>
+      <p class="lead" style="margin-top:18px">Expertise across banking, technology, operations, and AI.</p>
       <!-- To add a real photo: drop the file in assets/ and replace the monogram <span> with
            <img src="assets/alex.jpg" alt="Alex Balmaseda" /> inside the .avatar div. -->
       <div class="team">
         <div class="member">
-          <div class="avatar"><span>AB</span></div>
+          <div class="avatar"><img src="assets/alex.jpg" alt="Alex Balmaseda" /></div>
           <div>
             <h3>Alex Balmaseda</h3>
             <div class="role">Managing Director / Senior Partner</div>
@@ -182,7 +218,7 @@
           </div>
         </div>
         <div class="member">
-          <div class="avatar"><span>DS</span></div>
+          <div class="avatar"><img src="assets/david.jpg" alt="David Sipari" /></div>
           <div>
             <h3>David Sipari</h3>
             <div class="role">Senior Partner</div>
@@ -190,7 +226,7 @@
           </div>
         </div>
         <div class="member">
-          <div class="avatar"><span>VV</span></div>
+          <div class="avatar"><img src="assets/victor.jpg" alt="Victor Hugo Villafañe Aguilar" /></div>
           <div>
             <h3>Victor Hugo Villafañe Aguilar</h3>
             <div class="role">Senior Partner</div>
@@ -198,7 +234,7 @@
           </div>
         </div>
         <div class="member">
-          <div class="avatar"><span>SO</span></div>
+          <div class="avatar"><img src="assets/seun.jpg" alt="Seun A. Onodipe" /></div>
           <div>
             <h3>Seun A. Onodipe</h3>
             <div class="role">Executive Consultant / Senior Strategist</div>
@@ -226,18 +262,18 @@
     <div class="wrap">
       <div class="contact">
         <p class="eyebrow" style="color:var(--gold-soft)">Let's talk</p>
-        <h2>Ready to transform your business?</h2>
+        <h2>Let's start giving your business direction.</h2>
         <p class="lead" style="margin:16px auto 0;max-width:52ch">Partner with a team that brings a business-transformation perspective to your most important decisions.</p>
-        <a class="btn" href="mailto:alex@bt-consultingllc.com?subject=Business%20Transformation%20Consulting%20%E2%80%94%20inquiry">Start a conversation</a>
-        <a class="mail" href="mailto:alex@bt-consultingllc.com">alex@bt-consultingllc.com</a>
+        <a class="btn" href="mailto:info@bt-consultingllc.com?subject=Business%20Transformation%20Consulting%20%E2%80%94%20inquiry">Start a conversation</a>
+        <a class="mail" href="mailto:info@bt-consultingllc.com">info@bt-consultingllc.com</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-      <div class="word"><span class="mono">BTC</span><span class="full"><b>Business Transformation</b> Consulting</span></div>
-      <div>© 2026 Business Transformation Consulting LLC · New York · Toronto · Bangkok · Omaha</div>
+      <div class="word"><img src="assets/btc-consulting-logo.png" alt="BTC — Business Transformation Consulting LLC" class="logo-img" /></div>
+      <div>© 2026 Business Transformation Consulting LLC · New York · Toronto · Bangkok · Omaha · <a href="https://www.linkedin.com/company/business-transformation-consulting-llc/" style="color:var(--navy);text-decoration:none;font-weight:600">LinkedIn</a></div>
     </div>
   </footer>
 </body>
